@@ -1,1 +1,16 @@
+lst = ["Apple", "Banana", "Orange"]
 
+print("List:", lst)
+print("Length:", len(lst))
+print("First:", lst[0])
+
+lst.append("Mango")
+lst.sort()
+print("Updated:", lst)
+
+while True:
+    cmd = input("Add/Remove/View/Quit: ").lower()
+    if cmd == 'q': break
+    elif cmd == 'add': lst.append(input("Item: "))
+    elif cmd == 'remove': lst.remove(input("Item: "))
+    elif cmd == 'view': print(lst)
