@@ -1,18 +1,65 @@
 import numpy as np
 
-def fay_herriot(y, sampling_variances):
-    m = len(y)
-    y_bar = np.mean(y)
-    sample_var = np.sum((y - y_bar) ** 2) / (m - 1)
-    
-    psi = max(0, sample_var - np.mean(sampling_variances))
-    
-    gamma = psi / (psi + sampling_variances)
-    eblup = gamma * y + (1 - gamma) * y_bar
-    return eblup, psi
+print("DAY 32 - NUMPY")
 
-y_observed = np.array([12.5, 14.1, 9.8, 11.2, 15.0])
-variances = np.array([1.2, 0.8, 2.1, 1.5, 0.9])
+arr = np.array([10, 20, 30, 40, 50])
 
-eblup, psi = fay_herriot(y_observed, variances)
-print("EBLUP Estimates:", eblup)
+print("\nOriginal Array:")
+print(arr)
+
+print("\nSum:")
+print(np.sum(arr))
+
+print("\nMean:")
+print(np.mean(arr))
+
+print("\nMaximum:")
+print(np.max(arr))
+
+print("\nMinimum:")
+print(np.min(arr))
+
+print("\nStandard Deviation:")
+print(np.std(arr))
+
+print("\nSorted Array:")
+numbers = np.array([50, 10, 40, 20, 30])
+print(np.sort(numbers))
+
+print("\n2D Array:")
+matrix = np.array([
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+])
+
+print(matrix)
+
+print("\nSum of All Elements:")
+print(np.sum(matrix))
+
+print("\nColumn Sum:")
+print(np.sum(matrix, axis=0))
+
+print("\nRow Sum:")
+print(np.sum(matrix, axis=1))
+
+print("\nMaximum of Each Column:")
+print(np.max(matrix, axis=0))
+
+print("\nMinimum of Each Row:")
+print(np.min(matrix, axis=1))
+
+print("\nTranspose:")
+print(matrix.T)
+
+print("\nReshaped Array:")
+arr2 = np.arange(1, 13)
+print(arr2.reshape(3, 4))
+
+print("\nRandom Array:")
+random_array = np.random.randint(1, 100, 5)
+print(random_array)
+
+print("\nRandom Array Sum:")
+print(np.sum(random_array))
